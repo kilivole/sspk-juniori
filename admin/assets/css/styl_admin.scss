@@ -1,0 +1,149 @@
+$svetlezelena: rgb(167, 246, 170);
+$zelena: rgb(85, 247, 89);
+$svetlebila: rgb(221, 215, 211);
+$ruda:rgb(244, 67, 54);
+$pozadi: rgb(0, 20, 21);
+$seda: rgb(34, 38, 41);
+$stin: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+$stinBoxu: 0px 2px 11px 3px rgba(0,0,0,0.75);
+
+@mixin camupozadi{
+    display:flex;
+    flex: 1 100%;
+    flex-wrap: wrap;
+    background-image: url("../img/camu_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+ body{
+    font-family: Montserrat;
+    ::selection {
+        background: $zelena;
+      }
+ }
+  .background{
+    @include camupozadi();
+    height:100vh;
+  }
+.form-login {
+    max-width: 500px;
+    width:100%;
+    //height:300px;
+	background: #fff;
+	border-radius: 5px;
+    box-shadow: $stinBoxu;
+    //position: absolute; 
+    //margin: auto; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+
+    h2.form-login-heading {
+        margin: 0;
+        padding: 25px 20px;
+        text-align: center;
+        background: $zelena;
+        border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        color: #fff;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    .btn{
+        background-color: $zelena;
+        color:black;
+        display:block;
+        margin:auto;
+        padding: 16px 12px;
+        &:hover{
+            color:white;
+            box-shadow: $stinBoxu;
+        }
+    }
+    .form-control{
+        height:50px;
+    }
+}
+
+.black-bg{
+    background-image: url("../img/camu_bg.jpg");
+    border-image: linear-gradient( to left,rgba(0, 0, 0, 0), $zelena 50%,rgba(0, 0, 0, 0)) 100% 0 stretch;
+    background-color: $zelena;
+}
+
+.nav > li > a:hover{
+
+    text-decoration: none;
+    background-color: $zelena;  
+
+}
+
+.logout{
+    background-color: $zelena;
+    color:black;
+    border-radius: 4px;
+    &:hover{
+        color:white;
+        //box-shadow: $stinBoxu;
+    }
+    }
+
+    #sidebar{
+        background-color: $seda;
+    }
+
+    .img-circle {
+
+        border-radius: 0%;
+        max-width: 100px;
+        width: 100%;
+    
+    }
+    ul, ol {
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+    
+    }
+
+    .fa-bars {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        color:$zelena;
+    
+    }
+    ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus{
+        background-color:$zelena;
+    }
+    ul.sidebar-menu li a:hover{
+        color:black;
+        background-color: $zelena;
+    }
+// --------------------- CKEditor ---------------------------------
+    .ck-content {
+        height:500px;
+    }
+
+// --------------------- Stránkování -------------------------------
+
+
+.pagination a{
+    color:$seda;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+.pagination a.active{
+    background-color: $zelena;
+    color:$seda;
+}
+.pagination{
+    margin-top:30px;
+}
+.pagination a:hover:not(.active){
+    background-color:$svetlebila;
+}

@@ -1,0 +1,863 @@
+@charset "UTF-8";
+.novinky {
+  position: relative;
+  margin-right: 1%;
+}
+
+.novinky a {
+  color: #222629;
+  font-size: 1.2em;
+  border-bottom: solid 1px;
+}
+
+.novinky a:hover {
+  color: #55f759;
+}
+
+.novinky .hdrbox {
+  background-color: #ddd7d3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#c9c0bb));
+  background-image: linear-gradient(#ffffff, #c9c0bb);
+  padding: 1%;
+  margin-bottom: 1vh;
+  -webkit-box-shadow: 0px 2px black;
+          box-shadow: 0px 2px black;
+}
+
+.novinky .hdrbox p {
+  font-size: 0.8em;
+  color: black;
+}
+
+.novinky .hdrbox .ndpisbox {
+  font-size: 1.2em;
+  font-weight: 500;
+  border-bottom: black solid 1px;
+}
+
+.novinky .hdrbox h2, .novinky .hdrbox .ndpisbox {
+  margin: 0;
+}
+
+.novinky .nhdr h1 {
+  margin: 0;
+  color: #ddd7d3;
+  font-size: 1.5em;
+  border-bottom: #ddd7d3 solid 2px;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0px;
+  background-color: #222629;
+  color: #a7f6aa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  font-family: Montserrat;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: #55f759;
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.stin {
+  background: radial-gradient(circle at top center, rgba(167, 246, 170, 0.3), Transparent 40%), url("../img/check_bg.png") no-repeat top center;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+
+  -------------------- HEADER -----------------
+
+*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-image: url("../img/camu_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  /*
+  
+  -------------------------- Začátek SWIPERU -------------------------
+
+  */
+  /*
+  
+  ------------------------- Konec SWIPERU ------------------------------
+  
+  */
+}
+
+header .menu {
+  position: -webkit-sticky;
+  position: sticky;
+  border-bottom: 1px solid;
+  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+     border-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(50%, #55f759), to(rgba(0, 0, 0, 0))) 100% 0 stretch;
+     border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+  cursor: pointer;
+}
+
+header .menu .logomenu {
+  margin: auto;
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+  margin-left: 0;
+}
+
+header .menu .logomenu img {
+  max-height: 97px;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header .menu .logomenu :hover {
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+}
+
+header .menu .loginbtn {
+  margin: auto;
+  margin-right: 0;
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+}
+
+header .menu .loginbtn img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 57px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header .menu .loginbtn:hover,
+header .menu .fa-bars:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-filter: drop-shadow(0px 0px 2px #a7f6aa);
+          filter: drop-shadow(0px 0px 2px #a7f6aa);
+}
+
+header .menu .menu-polozky {
+  margin: auto;
+}
+
+header .menu .menu-polozky a {
+  font-weight: bold;
+  display: inline-block;
+  /*v řádce, v bloku*/
+  padding: 2vh 2vh;
+  color: #a7f6aa;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header .menu .fa-bars {
+  display: none;
+}
+
+header .menu .menu-polozky a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#55f759), to(#a7f6aa));
+  background: linear-gradient(to bottom, #55f759 0%, #a7f6aa 100%);
+  color: black;
+}
+
+@media all and (max-width: 768px) {
+  header .menu {
+    /*podmínky které platí do šíře stránky*/
+  }
+  header .menu .fa-bars {
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: Transparent;
+  }
+  header .menu .fa-bars .hamburger {
+    max-width: 50px;
+  }
+  header .menu .logomenu {
+    margin: auto;
+    -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+  }
+  header .menu .logomenu img {
+    max-height: 97px;
+    height: 100%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  header .menu .logomenu img {
+    max-height: 60px;
+  }
+  header .menu .loginbtn img {
+    padding: none;
+    height: 45px;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  header .menu .menu-polozky {
+    display: none;
+    background-color: #001415;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+  }
+  header .menu .menu-polozky a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px;
+    color: #a7f6aa;
+    text-transform: uppercase;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+}
+
+header .swiper-container {
+  max-width: 600px;
+  width: 100%;
+  max-height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  margin-left: 1%;
+  position: relative;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+}
+
+header .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #a7f6aa;
+  margin-right: 0;
+  /* Text do středu */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+header .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #55f759;
+}
+
+header .swiper-button-next {
+  background-image: url("../img/pagination-right.png");
+  right: 10px;
+  left: auto;
+}
+
+header .swiper-button-prev {
+  background-image: url("../img/pagination-left.png");
+  left: 10px;
+  right: auto;
+}
+
+@media all and (max-width: 1110px) {
+  header .swiper-container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  header .novinky {
+    margin-right: 0;
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  border-top: 0;
+  max-width: unset;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  background: radial-gradient(circle at top center, rgba(167, 246, 170, 0.1), Transparent 40%), url("../img/check_bg.png") no-repeat top center;
+  background-color: #222629;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logosticky {
+  height: 60px;
+  padding-top: 0.5vh;
+  padding-bottom: 1vh;
+}
+
+.vycpavka {
+  height: 101px;
+  width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  .vycpavka {
+    height: 73px;
+  }
+}
+
+/*
+
+ --------------------- Konec HEADERU ----------------
+
+*/
+/*
+
+
+----------------------- Začátek SEKCE -----------------
+
+*/
+section {
+  /* 
+
+  --------------- LIGHTBOX galerie -------------------
+
+*/
+  /*
+   -------------- Konec galerie LIGHTBOX --------------
+  */
+}
+
+section .clanek {
+  padding: 5% 2%;
+  -webkit-filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.5));
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+}
+
+section .clanek h1 {
+  font-weight: 550;
+  margin: 0;
+  border-bottom: solid 2px #a7f6aa;
+  text-transform: uppercase;
+}
+
+section .imgtxt {
+  max-width: 400px;
+  width: 100%;
+  height: 290px;
+  background-color: #ddd7d3;
+  margin: 1%;
+  float: right;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .imgtxt img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+section .info h1 {
+  border: none;
+}
+
+section .nabor {
+  background-color: white;
+}
+
+section .nabor h1, section .nabor p {
+  color: #001415;
+}
+
+section .nabor h1 {
+  border: none;
+}
+
+section .mapa {
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  max-width: 600px;
+  width: 100%;
+  height: 300px;
+  float: right;
+  margin: 2%;
+  margin-right: 0;
+}
+
+section .galerka {
+  margin-left: auto;
+  margin-right: auto;
+  margin: 3vh 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+section .example-image {
+  margin: 1vh;
+  height: 250px;
+  width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section .example-image:hover {
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media all and (max-width: 600px) {
+  section .example-image {
+    width: 100%;
+    margin: 1vh 0;
+  }
+}
+
+@media all and (max-width: 768px) {
+  section .mapa {
+    max-width: 768px;
+    width: 100%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  section p {
+    padding: 2%;
+  }
+  section h1 {
+    text-align: center;
+  }
+  section .imgtxt {
+    margin: 2vh 0;
+    height: 100%;
+    max-width: 768px;
+  }
+}
+
+/*
+
+
+------------------------ Konec SEKCE ---------------------
+
+*/
+/* 
+
+
+------------------------Začátek FOOTERU -------------------
+
+*/
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-image: url("../img/camu_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  border-top: 2px solid;
+  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+     border-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(50%, #55f759), to(rgba(0, 0, 0, 0))) 100% 0 stretch;
+     border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+}
+
+footer .logoftr {
+  margin: auto;
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+  padding-top: 5vh;
+  text-align: center;
+}
+
+footer .logoftr img {
+  max-height: 97px;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+footer .footer-polozky {
+  text-align: center;
+  margin: auto;
+}
+
+footer .footer-polozky a {
+  font-weight: bold;
+  display: inline-block;
+  /*v řádce, v bloku*/
+  padding: 2vh 2vh;
+  color: #a7f6aa;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+footer .footer-polozky, footer a:hover {
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+  color: #55f759;
+}
+
+footer p {
+  color: #a7f6aa;
+  text-align: center;
+}
+
+@media all and (max-width: 768px) {
+  footer .logoftr {
+    margin: auto;
+    -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+  }
+  footer .logoftr img {
+    max-height: 97px;
+    height: 100%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  footer .logoftr img {
+    max-height: 60px;
+  }
+}
+
+footer .socbtn {
+  text-align: center;
+}
+
+footer .socbtn:hover {
+  -webkit-filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+}
+
+/*
+
+
+------------------------ Konec FOOOTERU --------------------
+
+*/
+/*
+
+
+------------------------ Začátek Buttonu co vrací nahoru ----
+
+*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  background-color: #55f759;
+  color: #222629;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+#myBtn:hover {
+  background-color: #a7f6aa;
+  color: #222629;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+}
+
+@media all and (max-width: 600px) {
+  #myBtn {
+    padding: 8px;
+    right: 15px;
+    bottom: 10px;
+  }
+}
+
+/*
+
+
+----------------------- Konec Buttonu co vrací nahoru ---------
+
+*/
+/*
+----------------------- Login panel -----------------------------
+
+*/
+/* Zatmavení pozadí */
+.login {
+  font-family: Montserrat;
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 10000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 60px;
+  /* Modal Content/Box */
+  /* Full-width input fields */
+  /* Center the image and position the close button */
+  /* Button na zavření (x) */
+  /* Styly pro cancel button */
+  /* Add Zoom Animation */
+  /* Change styles for span and cancel button on extra small screens */
+}
+
+.login .login-content {
+  background-color: #fefefe;
+  background-image: url("../img/camu_bg.jpg");
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+  color: #a7f6aa;
+}
+
+.login input[type=text], .login input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  border-bottom: 1px solid;
+  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+     border-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(50%, #55f759), to(rgba(0, 0, 0, 0))) 100% 0 stretch;
+     border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+}
+
+.login .imgcontainer h2 {
+  text-shadow: 2px 5px 5px black;
+}
+
+.login img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.login .container-log {
+  padding: 16px;
+}
+
+.login span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.login .close {
+  float: right;
+  margin-right: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 0px 3px 5px black;
+}
+
+.login .close:hover,
+.login .close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.login .submit {
+  background-color: #55f759;
+  padding: 15px 30px;
+}
+
+.login .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.login .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .login span.psw {
+    display: block;
+    float: none;
+  }
+  .login .cancelbtn {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .login .login-content {
+    width: 100%;
+  }
+}
+
+.login button:hover {
+  opacity: 0.8;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination a {
+  color: #222629;
+  background-color: #ddd7d3;
+  padding: 8px 16px;
+  margin: 2px;
+  text-decoration: none;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.pagination a.active {
+  background-color: #55f759;
+  color: #222629;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: white;
+}
+/*# sourceMappingURL=kaskada.css.map */

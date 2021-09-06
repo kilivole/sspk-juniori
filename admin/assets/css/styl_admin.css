@@ -1,0 +1,151 @@
+body {
+  font-family: Montserrat;
+}
+
+body ::-moz-selection {
+  background: #55f759;
+}
+
+body ::selection {
+  background: #55f759;
+}
+
+.background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-image: url("../img/camu_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.form-login {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.form-login h2.form-login-heading {
+  margin: 0;
+  padding: 25px 20px;
+  text-align: center;
+  background: #55f759;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.form-login .btn {
+  background-color: #55f759;
+  color: black;
+  display: block;
+  margin: auto;
+  padding: 16px 12px;
+}
+
+.form-login .btn:hover {
+  color: white;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.75);
+}
+
+.form-login .form-control {
+  height: 50px;
+}
+
+.black-bg {
+  background-image: url("../img/camu_bg.jpg");
+  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+     border-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(50%, #55f759), to(rgba(0, 0, 0, 0))) 100% 0 stretch;
+     border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #55f759 50%, rgba(0, 0, 0, 0)) 100% 0 stretch;
+  background-color: #55f759;
+}
+
+.nav > li > a:hover {
+  text-decoration: none;
+  background-color: #55f759;
+}
+
+.logout {
+  background-color: #55f759;
+  color: black;
+  border-radius: 4px;
+}
+
+.logout:hover {
+  color: white;
+}
+
+#sidebar {
+  background-color: #222629;
+}
+
+.img-circle {
+  border-radius: 0%;
+  max-width: 100px;
+  width: 100%;
+}
+
+ul, ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fa-bars {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: #55f759;
+}
+
+ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+  background-color: #55f759;
+}
+
+ul.sidebar-menu li a:hover {
+  color: black;
+  background-color: #55f759;
+}
+
+.ck-content {
+  height: 500px;
+}
+
+.pagination a {
+  color: #222629;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #55f759;
+  color: #222629;
+}
+
+.pagination {
+  margin-top: 30px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd7d3;
+}
+/*# sourceMappingURL=styl_admin.css.map */

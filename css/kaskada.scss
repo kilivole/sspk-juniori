@@ -1,0 +1,731 @@
+$svetlezelena: rgb(167, 246, 170);
+$zelena: rgb(85, 247, 89);
+$svetlebila: rgb(221, 215, 211);
+$ruda:rgb(244, 67, 54);
+$pozadi: rgb(0, 20, 21);
+$seda: rgb(34, 38, 41);
+$stin: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.5));
+$stinBoxu: 0px 2px 11px 3px rgba(0,0,0,0.75);
+
+@mixin camupozadi{
+  display:flex;
+  flex: 1 100%;
+  flex-wrap: wrap;
+  background-image: url("../img/camu_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+  box-shadow: $stinBoxu;
+}
+@mixin logo{
+  margin: auto;
+      filter: $stin;
+      img {
+        max-height: 97px;
+        height: 100%;
+        transition: all 1s;
+      }
+}
+
+@mixin odkazymenu{
+  margin: auto;
+      a {
+        font-weight: bold;
+        display: inline-block; /*v řádce, v bloku*/
+        padding: 2vh 2vh;
+        color: $svetlezelena;
+        transition: all 1s;
+      }
+}
+
+
+.novinky{
+  position:relative;
+  margin-right:1%;
+  a{
+    color:$seda;
+    font-size: 1.2em;
+    border-bottom:solid 1px;
+    &:hover{
+      color:$zelena;
+    }
+  }
+  .hdrbox{
+    p{
+      font-size: 0.8em;
+      color:black;
+    }
+    background-color: $svetlebila;
+    background-image: linear-gradient(#ffffff, #c9c0bb);
+    padding:1%;
+    margin-bottom:1vh;
+    box-shadow:0px 2px black;
+    .ndpisbox{
+      font-size: 1.2em;
+      font-weight: 500;
+      border-bottom:black solid 1px;
+    }
+    h2,.ndpisbox {
+      margin:0;
+    }
+  }
+  .nhdr{
+    h1{
+      margin:0;
+      color: $svetlebila;
+      font-size: 1.5em;
+      border-bottom: $svetlebila solid 2px;
+      margin-bottom:2vh;
+      margin-top:1vh;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+
+body {
+  margin: 0px;
+  background-color: $seda;
+  color:$svetlezelena;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Montserrat;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color:$zelena;
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.stin{
+  background: radial-gradient(circle at top center, rgba(167, 246, 170, 0.3), Transparent 40%), url("../img/check_bg.png") no-repeat top center;
+  padding-top:2%;
+  padding-bottom:5%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+
+  -------------------- HEADER -----------------
+
+*/
+
+header {
+  @include camupozadi();
+  
+  .menu {
+    position: sticky;
+    border-bottom: 1px solid;
+    border-image: linear-gradient( to left,rgba(0, 0, 0, 0), $zelena 50%,rgba(0, 0, 0, 0)) 100% 0 stretch;
+    cursor: pointer;
+    
+    .logomenu {
+   @include logo();
+   margin-left:0;
+      :hover{
+        filter: $stin;
+      }
+    }
+
+    .loginbtn {
+      margin:auto;
+      margin-right:0;
+      filter: $stin;
+      img {
+        display: flex;
+        height: 57px;
+        //padding-top: 2vh;
+        transition: all 1s;
+      }
+    }
+
+    .loginbtn:hover,
+    .fa-bars:hover {
+      transition: all 0.5s;
+      filter: drop-shadow(0px 0px 2px $svetlezelena);
+    }
+
+    .menu-polozky {
+      @include odkazymenu();
+    }
+
+
+    .fa-bars {
+      display: none;
+    }
+
+    .menu-polozky a:hover{
+      background: linear-gradient(to bottom, $zelena 0%, $svetlezelena 100%);
+      color: black;
+    }
+  
+
+  @media all and (max-width: 768px) {
+    /*podmínky které platí do šíře stránky*/
+
+      .fa-bars {
+        margin: auto;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        border: none;
+        background-color: Transparent;
+        .hamburger {
+          max-width: 50px;
+        }
+      }
+
+      .logomenu{
+        @include logo();
+        img{
+          max-height:60px;
+        }
+      }
+
+      .loginbtn {
+        img {
+          padding:none;
+          height: 45px;
+          transition: all 1s;
+        }
+      }
+
+      .menu-polozky {
+        display: none;
+        background-color: $pozadi;
+        // z-index: 1000;
+        order:3;
+        width: 100%;
+        a {
+          display: flex;
+          padding: 20px;
+          color: $svetlezelena;
+          text-transform: uppercase;
+          transition: all 1s;
+        }
+      }
+    }
+  }
+  /*
+  
+  -------------------------- Začátek SWIPERU -------------------------
+
+  */
+  .swiper-container {
+    max-width: 600px;
+    width: 100%;
+    max-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:4%;
+    margin-left:1%;
+    position:relative;
+    box-shadow: $stinBoxu;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: $svetlezelena;
+    margin-right:0;
+    /* Text do středu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      object-fit: cover;
+      height:100%;
+      width:100%;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: $zelena;
+  }
+
+  .swiper-button-next{
+    background-image: url("../img/pagination-right.png");
+    right: 10px;
+    left: auto;
+  }
+  .swiper-button-prev{
+    background-image: url("../img/pagination-left.png");
+    left: 10px;
+    right: auto;
+  }
+
+  /*
+  
+  ------------------------- Konec SWIPERU ------------------------------
+  
+  */
+
+
+  @media all and (max-width: 1110px) {
+    .swiper-container{
+      max-width:1110px;
+      width:100%;
+      margin:0;
+      order:1;
+      transition: all 1s;
+    }
+    .novinky{
+      margin-right:0;
+      width:100%;
+      order:2;
+      transition: all 1s;
+    }
+  }
+}
+.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  border-top: 0;
+  max-width:unset;
+  box-shadow: $stinBoxu;
+  background: radial-gradient(circle at top center, rgba(167, 246, 170, 0.1), Transparent 40%), url("../img/check_bg.png") no-repeat top center;
+  background-color:$seda;
+  object-fit: cover;
+  //transition: all 0.5s ease;
+}
+.logosticky{
+  height:60px;
+  padding-top:0.5vh;
+  padding-bottom:1vh;
+}
+
+.vycpavka{
+  height:101px;
+  width:100%;
+}
+
+@media all and (max-width: 768px) {
+  .vycpavka{
+    height:73px;
+  }
+}
+
+/*
+
+ --------------------- Konec HEADERU ----------------
+
+*/
+
+/*
+
+
+----------------------- Začátek SEKCE -----------------
+
+*/
+section  {
+
+  .clanek{
+    padding:5% 2%;
+    filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.5));
+    box-shadow: $stinBoxu;
+      h1 {
+      font-weight:550;
+      margin:0;
+      border-bottom: solid 2px $svetlezelena;
+      text-transform: uppercase;
+  }
+ 
+}
+.imgtxt{
+  max-width: 400px;
+  width: 100%;
+  height:290px;
+  background-color:$svetlebila;
+  margin:1%;
+  float:right;
+  box-shadow: $stinBoxu;
+  display:flex;
+    img{
+      object-fit: cover;
+      height:100%;
+      width:100%;
+    }
+}
+.info{
+    h1{
+      border:none;
+    }
+  }
+
+  .nabor {
+    background-color: white;
+    h1, p{
+      color: $pozadi;
+    }
+    h1{
+      border:none;
+    }
+  }
+
+  .mapa{
+    box-shadow: $stinBoxu;
+    max-width:600px;
+    width:100%;
+    height:300px;
+    float:right;
+    margin:2%;
+    margin-right:0;
+  }
+/* 
+
+  --------------- LIGHTBOX galerie -------------------
+
+*/
+  .galerka{
+    margin-left:auto;
+    margin-right:auto;
+    //position:relative;
+    margin: 3vh 0;
+    transition: all 1s;
+  }
+  .example-image{
+    margin:1vh;
+    height:250px;
+    width:250px;
+    object-fit: cover;
+  }
+  .example-image:hover{
+    box-shadow: $stinBoxu;
+    transition: all 1s;
+  }
+
+  @media all and (max-width: 600px){
+    .example-image{
+      width:100%;
+      margin: 1vh 0;
+    }
+  }
+
+  /*
+   -------------- Konec galerie LIGHTBOX --------------
+  */
+
+  @media all and (max-width: 768px){
+    .mapa{
+      max-width:768px;
+      width:100%;
+      transition: all 1s;
+    }
+
+    p{
+      padding:2%;
+    }
+    h1{
+      text-align: center;
+    }
+    .imgtxt{
+      margin: 2vh 0;
+      height:100%;
+      max-width:768px;
+    }
+
+  }
+}
+
+/*
+
+
+------------------------ Konec SEKCE ---------------------
+
+*/
+
+/* 
+
+
+------------------------Začátek FOOTERU -------------------
+
+*/
+footer {
+  
+  @include camupozadi();
+  //padding-top:5vh;
+  border-top: 2px solid;
+    border-image: linear-gradient( to left,rgba(0, 0, 0, 0), $zelena 50%,rgba(0, 0, 0, 0)) 100% 0 stretch;
+    
+  .logoftr {
+    @include logo();
+    padding-top:5vh;
+    text-align: center;
+  }
+  .footer-polozky {
+    text-align:center;
+    @include odkazymenu();
+  }
+  .footer-polozky, a:hover{
+    filter: $stin;
+    color:$zelena;
+  }
+  p{
+    color: $svetlezelena;
+    text-align: center;
+  }
+
+  @media all and(max-width: 768px){
+    .logoftr{
+      @include logo();
+      img{
+        max-height:60px;
+      }
+    }
+  }
+  .socbtn{
+    text-align:center;
+  }
+  .socbtn:hover{
+    filter: $stin;
+  }
+}
+
+/*
+
+
+------------------------ Konec FOOOTERU --------------------
+
+*/
+
+/*
+
+
+------------------------ Začátek Buttonu co vrací nahoru ----
+
+*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  background-color: $zelena;
+  color: $seda;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+#myBtn:hover {
+  background-color: $svetlezelena;
+  color: $seda;
+  box-shadow: $stinBoxu;
+}
+
+@media all and(max-width: 600px){
+   #myBtn{
+     padding:8px;
+     right:15px;
+     bottom:10px;
+   }
+}
+
+/*
+
+
+----------------------- Konec Buttonu co vrací nahoru ---------
+
+*/
+
+
+/*
+----------------------- Login panel -----------------------------
+
+*/
+
+
+/* Zatmavení pozadí */
+.login {
+  font-family: Montserrat;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+    /* Modal Content/Box */
+  .login-content {
+    background-color: #fefefe;
+    background-image:url("../img/camu_bg.jpg");
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    color:$svetlezelena;
+
+  }
+    /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    border-bottom: 1px solid;
+    border-image: linear-gradient( to left,rgba(0, 0, 0, 0), $zelena 50%,rgba(0, 0, 0, 0)) 100% 0 stretch;
+    h2{
+      text-shadow: 2px 5px 5px black;
+    }
+  }
+
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+
+  .container-log {
+    padding: 16px;
+  }
+
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  /* Button na zavření (x) */
+.close {
+  //position: absolute;
+  float:right;
+  margin-right:15px;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow:0px 3px 5px black;
+}
+
+.close:hover,
+.close:focus {
+  color: $ruda;
+  cursor: pointer;
+}
+
+.submit{
+  background-color:$zelena;
+  padding:15px 30px;
+  // background-image: linear-gradient($zelena, #59a55a);
+}
+
+
+
+/* Styly pro cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: $ruda;
+}
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+@media all and (max-width:768px){
+  .login-content{
+    width:100%;
+  }
+}
+button:hover {
+  opacity: 0.8;
+  box-shadow: $stinBoxu;
+}
+}
+
+// --------------------- Stránkování -------------------------------
+.pagination{
+  text-align: center; 
+  margin-top:30px;
+  
+}
+.pagination a{
+  color:$seda;
+  background-color:$svetlebila;
+  padding: 8px 16px;
+  margin:2px;
+  text-decoration: none;
+  transition: background-color .2s;
+}
+.pagination a.active{
+  background-color: $zelena;
+  color:$seda;
+}
+
+.pagination a:hover:not(.active){
+  background-color:white;
+}
+
+
+
+
